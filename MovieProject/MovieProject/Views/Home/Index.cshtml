@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
     var Slides = (List<Models.EF.Slide>)ViewBag.Slides;
@@ -8,35 +7,34 @@
     var ListMoviePo = (List<Models.EF.Movie>)ViewBag.ListMoviePo;
 }
 @section slide{
-    <!-- banner -->
-    <div id="slidey" style="display:none;">
-        <ul>
-            @foreach (var item in Slides)
-            {
-                <li><img src="@item.Image" alt=" "><div><p class='title' with="250">@item.Name</p></div><p class='description'>@item.Description</p></li>
+<!-- banner -->
+<div id="slidey" style="display:none;">
+    <ul>
+        @foreach (var item in Slides)
+        {
+        <li><img src="@item.Image" alt=" ">
+            <div>
+                <p class='title' with="250">@item.Name</p>
+            </div>
+            <p class='description'>@item.Description</p>
+        </li>
 
-            }
-<ul>
-            @foreach (var item in Slides)
-            {
-                <li><img src="@item.Image" alt=" "><div><p class='title' with="250">@item.Name</p></div><p class='description'>@item.Description</p></li>
+        }
 
-            }
-
-        </ul>
-    </div>
-    <script src="~/assets/web/js/jquery.slidey.js"></script>
-    <script src="~/assets/web/js/jquery.dotdotdot.min.js"></script>
-    <script type="text/javascript">
-        $("#slidey").slidey({
-            interval: 8000,
-            listCount: 5,
-            autoplay: false,
-            showList: true
-        });
-        $(".slidey-list-description").dotdotdot();
-    </script>
-    <!--End banner -->
+    </ul>
+</div>
+<script src="~/assets/web/js/jquery.slidey.js"></script>
+<script src="~/assets/web/js/jquery.dotdotdot.min.js"></script>
+<script type="text/javascript">
+    $("#slidey").slidey({
+        interval: 8000,
+        listCount: 5,
+        autoplay: false,
+        showList: true
+    });
+    $(".slidey-list-description").dotdotdot();
+</script>
+<!--End banner -->
 }
 
 <!-- banner-bottom -->
@@ -49,7 +47,8 @@
                     <div class="item">
                         <div class="w3l-movie-gride-agile w3l-movie-gride-agile1">
                             <a href="/phim/@s.MovieID" class="hvr-shutter-out-horizontal">
-                                <img src="@s.Image" title="album-name" class="img-responsive" style="width:150px; height: 225px;"alt="@s.Name" />
+                                <img src="@s.Image" title="album-name" class="img-responsive"
+                                style="width:150px; height: 225px;" alt="@s.Name" />
                                 <div class="w3l-action-icon"><i class="fa fa-play-circle" aria-hidden="true"></i></div>
                             </a>
                             <div class="mid-1 agileits_w3layouts_mid_1_home">
@@ -60,7 +59,9 @@
                                     <p>@s.Year</p>
                                     <div class="block-stars">
                                         <ul class="w3l-ratings">
-                                            <h5 style="font-size: 12px; font-weight: bold; background-color: #1D5C63;color:white; border-radius: 3px; padding: 3px;"> Điểm IMDb: @s.Rate</h5>
+                                            <h5
+                                            style="font-size: 12px; font-weight: bold; background-color: #1D5C63;color:white; border-radius: 3px; padding: 3px;">
+                                                Điểm IMDb: @s.Rate</h5>
 
                                         </ul>
                                     </div>
@@ -108,7 +109,9 @@
 
                                         <div class="block-stars">
                                             <ul class="w3l-ratings">
-                                                <h5 style="font-size: 12px; font-weight: bold; background-color: #1D5C63;color: white; border-radius: 3px; padding: 3px;"> Điểm IMDb: @m.Rate</h5>
+                                                <h5
+                                                style="font-size: 12px; font-weight: bold; background-color: #1D5C63;color: white; border-radius: 3px; padding: 3px;">
+                                                    Điểm IMDb: @m.Rate</h5>
 
                                             </ul>
                                         </div>
@@ -126,10 +129,10 @@
         </div>
     </div>
 </div>
-                            }
+}
 <!-- //general -->
 @*<div class="container">
-        <center><img src="#" alt="HTML5 Icon" style="width:980px;height:100px;"></center>
+    <center><img src="#" alt="HTML5 Icon" style="width:980px;height:100px;"></center>
     </div>*@
 <!-- Latest-tv-series -->
 <div class="Latest-tv-series">
@@ -147,8 +150,10 @@
                                 {
                                     <div class="col-md-2 w3l-movie-gride-agile">
                                         <a href="/phim/@po.MovieID" class="hvr-shutter-out-horizontal">
-                                            <img src="@po.Image" title="album-name" alt="@po.Name" width="182" height="268" />
-                                            <div class="w3l-action-icon"><i class="fa fa-play-circle" aria-hidden="true"></i></div>
+                                            <img src="@po.Image" title="album-name" alt="@po.Name" width="182"
+                                            height="268" />
+                                            <div class="w3l-action-icon"><i class="fa fa-play-circle"
+                                                aria-hidden="true"></i></div>
                                         </a>
                                         <div class="mid-1 agileits_w3layouts_mid_1_home">
                                             <div class="w3l-movie-text">
@@ -158,7 +163,9 @@
                                                 <p>@po.Year</p>
                                                 <div class="block-stars">
                                                     <ul class="w3l-ratings">
-                                                        <h5 style="font-size: 12px; font-weight: bold; background-color: #1D5C63;color:white; border-radius: 3px; padding: 3px;"> Điểm IMDb: @po.Rate</h5>
+                                                        <h5
+                                                        style="font-size: 12px; font-weight: bold; background-color: #1D5C63;color:white; border-radius: 3px; padding: 3px;">
+                                                            Điểm IMDb: @po.Rate</h5>
 
                                                     </ul>
                                                 </div>
@@ -205,19 +212,19 @@
     <iframe src="https://player.vimeo.com/video/165197924?color=ffffff&title=0&byline=0&portrait=0"></iframe>
 </div>
 <script>
-            $(document).ready(function () {
-                $('.w3_play_icon,.w3_play_icon1,.w3_play_icon2').magnificPopup({
-                    type: 'inline',
-                    fixedContentPos: false,
-                    fixedBgPos: true,
-                    overflowY: 'auto',
-                    closeBtnInside: true,
-                    preloader: false,
-                    midClick: true,
-                    removalDelay: 300,
-                    mainClass: 'my-mfp-zoom-in'
-                });
+    $(document).ready(function () {
+        $('.w3_play_icon,.w3_play_icon1,.w3_play_icon2').magnificPopup({
+            type: 'inline',
+            fixedContentPos: false,
+            fixedBgPos: true,
+            overflowY: 'auto',
+            closeBtnInside: true,
+            preloader: false,
+            midClick: true,
+            removalDelay: 300,
+            mainClass: 'my-mfp-zoom-in'
+        });
 
-            });
+    });
 </script>
 <!-- //Latest-tv-series -->
