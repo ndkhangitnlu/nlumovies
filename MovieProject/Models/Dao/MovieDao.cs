@@ -95,7 +95,8 @@ namespace Models.Dao
 
         public List<Movie> SearchByKey(string key)
         {
-            return db.Movies.SqlQuery("Select * from Movie where Name like '%"+key+"%'").ToList();
+            // return db.Movies.SqlQuery("Select * from Movie where CONTAINS(Name, key) ").ToList();
+            return db.Movies.SqlQuery("Select * from Movie where Name like '%, key ,%' ").ToList();
         }
 
         public Movie ViewDetail(int id)
