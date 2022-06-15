@@ -93,24 +93,7 @@
                                         </form>
                                     </div>
                                 </div>
-                                <div class="comment">
-                                    @if (Session["username"] != null)
-                                    {
-                                        using (Html.BeginForm("AddReview", "Movie", new { movieID = @Model.MovieID }, FormMethod.Post, new { @class = "aa-review-form" }))
-                                        {
-
-                                          
-                                            <!-- review form -->
-
-                                            <div class="form-group">
-                                                <label for="message">Đánh giá phim</label>
-                                                <textarea class="form-control" rows="3" name="comment" id="comment"></textarea>
-                                            </div>
-
-                                            <button type="submit" class="btn btn-default aa-review-submit">Đánh giá</button>
-                                        }
-                                    }
-                                </div>
+                             
                             </div>
                         </div>
 
@@ -134,6 +117,7 @@
 
                     <div class="all-comments">
                         <div class="all-comments-info">
+                            <div class="fb-comments" data-href="http://localhost:52046/" data-width="" data-numposts="5"></div>
                             <div class="fb-comments" data-href="http://localhost:52046/phim/@Model.MovieID" data-width="600" data-numposts="5"></div>
                         </div>
                     </div>
