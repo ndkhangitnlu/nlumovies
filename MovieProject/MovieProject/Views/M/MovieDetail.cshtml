@@ -93,9 +93,25 @@
                                         </form>
                                     </div>
                                 </div>
-                            </div>
+                                <div class="comment">
+                                    @if (Session["username"] != null)
+                                    {
+                                        using (Html.BeginForm("AddReview", "Movie", new { movieID = @Model.MovieID }, FormMethod.Post, new { @class = "aa-review-form" }))
+                                        {
 
-                         
+                                          
+                                            <!-- review form -->
+
+                                            <div class="form-group">
+                                                <label for="message">Đánh giá phim</label>
+                                                <textarea class="form-control" rows="3" name="message"></textarea>
+                                            </div>
+
+                                            <button type="submit" class="btn btn-default aa-review-submit">Đánh giá</button>
+                                        }
+                                    }
+                                </div>
+                            </div>
                         </div>
 
 
@@ -194,3 +210,7 @@
     </div>
 </div>
 <!-- //w3l-medile-movies-grids -->
+<script src="~/Areas/Admin/ckeditor/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace('comment');
+</script>

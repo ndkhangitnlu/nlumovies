@@ -71,14 +71,14 @@ namespace MovieProject.Controllers
                 // Get the user's information, like email, first name, middle name etc
                 dynamic me = fb.Get("me?fields=first_name,middle_name,last_name,id,email");
                 string email = me.email;
-                string userName = me.email;
+                string userName = me.first_name+ me.middle_name+ me.last_name;
                 string firstname = me.first_name;
                 string middlename = me.middle_name;
                 string lastname = me.last_name;
 
                 var user = new User();
                 user.Email = email;
-                user.UserName = email;
+                user.UserName = userName;
                 user.Status = true;
                 user.Name = firstname + " " + middlename + " " + lastname;
                 user.CreatedDate = DateTime.Now;

@@ -32,6 +32,12 @@ namespace Models.Dao
             }
 
         }
+        public bool Add(Comment comment)
+        {
+            db.Comments.Add(comment);
+            db.SaveChanges();
+            return true;
+        }
         public bool ChangeStatus(int id)
         {
             var ad = db.Comments.Find(id);
